@@ -310,10 +310,18 @@ ul > * {
         align-items: center;
     }
 
+    .skills {
+        margin: 15px; /* Reduced margin */
+        padding: 0px; /* Reduced padding */
+    }
+
     .skills ul li {
         font-size: 1.2rem;
     }
-
+    .projects {
+        margin: 15px; /* Reduced margin */
+        padding: 0px; /* Reduced padding */
+    }
     .container2 {
         grid-template-columns: 1fr; /* 2 columns on tablets */
         gap: 20px; /* Adjusted gap */
@@ -339,6 +347,11 @@ ul > * {
     .container2 img {
         height: 200px; /* Reduced image size for tablets */
         width: 260px;
+    }
+
+    .about-me {
+        margin: 15px; /* Reduced margin */
+        padding: 0px; /* Reduced padding */
     }
 
     .about-me hr {
