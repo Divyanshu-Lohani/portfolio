@@ -1,0 +1,282 @@
+html {
+    scroll-padding-top: 60px; /* Adjust this value to match your header height */
+}
+
+body {
+    color: white;
+    background-color: #121517fb;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+/* Default link color */
+a {
+    color: white; /* Set your desired color */
+    text-decoration: none; /* Remove underline if desired */
+    background-color: transparent; /* Ensure no background color */
+}
+
+/* Ensure the color remains the same on hover */
+a:hover {
+    color: #04fffb; /* Change color on hover */
+    background-color: transparent; /* Ensure background is transparent */
+}
+
+/* Ensure the color remains the same when active (clicked) */
+a:active {
+    color: white; /* Same color when clicked */
+}
+
+/* Ensure the color remains the same for visited links */
+
+.title {
+    margin-bottom: 50px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    font-size: 1.2rem;
+    background-color: #111111f8;
+    position: fixed; /* Make the header stay fixed */
+    top: 0; /* Align it to the top of the page */
+    left: 0; /* Align it to the left of the viewport */
+    right: 0; /* Stretch it to the right side */
+    height: 60px; /* Set the height of the header */
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.logo {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+span {
+    color: #04fffb;
+}
+
+.navbar {
+    display: flex;
+    gap: 60px;
+    justify-content: flex-end;
+    padding: 20px;
+    margin: 0;
+}
+
+.navbar a {
+    cursor: pointer; /* Change cursor on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+    background-color: transparent; /* Ensure no background color */
+}
+
+.navbar a:hover {
+    transform: scale(1.1); /* Scale the button to 110% on hover */
+    border-bottom: 3px solid #04fffb; 
+    background-color: transparent; /* Ensure background is transparent */
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-right: 20%;
+    margin-left: 20%;
+    font-size: 30px;
+}
+
+.container1 .myphoto {
+    height: 250px;
+    border-radius: 50%; /* Make the photo circular */
+    box-shadow: 0 0 10px #04fffb, 0 0 20px #04fffb, 0 0 30px #04fffb; /* Initial glow */
+    animation: glowPulse 3s infinite ease-in-out; /* Animation for the pulsing glow */
+}
+
+/* Keyframes for pulsing effect */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 15px #04fffb, 0 0 20px #04fffb, 0 0 30px #04fffb; /* Weaker glow */
+    }
+    50% {
+        box-shadow: 0 0 25px #04fffb, 0 0 30px #04fffb, 0 0 60px #04fffb; /* Stronger glow */
+    }
+    100% {
+        box-shadow: 0 0 15px #04fffb, 0 0 20px #04fffb, 0 0 30px #04fffb; /* Weaker glow */
+    }
+}
+
+h1 {
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.summary {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: transparent;
+    border: 0;
+}
+
+.connect{
+    font-size: 1.2rem;
+    padding: 10px 15px; /* Adjust padding for width and height */
+    background-color: #04fffb; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 50px; /* Large border-radius for capsule shape */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+.connect:hover {
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0px 25px #04fffb;
+    transform: scale(1.05);
+    color: white;
+    /* Scale the button to 110% on hover */
+}
+
+.btn-connect:hover {
+    color: white;
+}
+
+.skills {
+    margin : 30px;
+    padding-top: 30px;
+    padding-left: 60px;
+    text-align: left;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+
+ul > * {
+    padding: 25px;
+}
+
+.skills > h2 {
+     color: #04fffb  
+}
+
+.projects {
+    margin : 30px;
+    padding-top: 30px;
+    padding-left: 60px;
+    text-align: left;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+
+.projects > h2 {
+    color: #04fffb    
+}
+
+
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    gap: 1rem;
+    margin: 0px;
+    font-size: 1.2rem;
+    padding: 50px 0px;
+}
+
+
+.container2 img{
+    height: 300px;
+    width: 300px;
+}
+.container3 {
+    display: grid;
+    grid-template-rows: 70px auto 100px;
+    border: 2px solid  #04fffb;
+    padding: 0px 20px;
+    border-radius: 30px;
+}
+
+.projects p {
+    font-size: 1rem;
+}
+
+.about-me{
+    margin : 30px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    padding-left: 60px;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.about-me > h2 {
+    color: #04fffb    
+}
+
+.contact {
+    margin : 30px;
+    padding-top: 30px;
+    padding-left: 60px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.contact h2 {
+    color: #04fffb;
+}
+
+.container4 {
+    display: flex;
+    gap: 10px;
+    justify-content: center ;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.container4 i {
+    border: 2px solid #04fffb;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 10px;
+    color: #04fffb;
+}
+
+
+
+.container4 i:hover {
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0px 25px #04fffb;
+    transform: scale(1.2);
+    color: white;
+    /* Scale the button to 110% on hover */
+    background-color: #04fffb;
+}
+
+
+
+.copyright {
+    margin: 30px;
+    margin-bottom: 5px;
+    font-size: small;
+}
+
