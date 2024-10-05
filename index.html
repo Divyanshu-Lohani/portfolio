@@ -6,102 +6,124 @@
     <title>Divyanshu Lohani</title>
     <link href="./style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Forum&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Forum&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
     <section class="title">
 
-        <header class="header" >
-            <div class="logo">
-                Divyanshu <span>Lohani</span> 
+        <header class="header">
+            <div class="logo" >
+               <a href="#home"> Divyanshu <span>Lohani</span></a>
             </div>
             <nav class="navbar">
-                <div class="Home">Home
-                </div>
-                <div class="Resume">About
-                </div>
-                <div class="Project">Project
-                </div>
-                <div class="Contact"> Contact</div>
+                <a class="Home" href="#home">Home</a>
+                <a href="#skills">Skills</a> 
+                <a class="Projects" href="#projects">Projects</a>
+                <a class="Contact" href="#about-me">About me</a>
             </nav>
         </header>
 
 
-        <div class="container2">
+         <div id="home" style="height: 70px; margin-top: -70px;"></div> 
+        <div class="container1">
             <img src="./assets/image/myphoto.png" class="myphoto" alt="myphoto">
             <h1>
-                It's <span>Divyanshu</span> 
+                It's <span>Divyanshu</span>
             </h1>
             <h2 class="summary">
-                Welcome, I am Divyanshu Lohani. A Interpreter, a AWS Solution Architect and a aspiring Developer.
-                I am here to showcase my skills and project as a aspiring developers.
-                Please look around the website. Hope you like it.
+                Hi there! I’m Divyanshu Lohani—a dedicated interpreter and AWS Solutions Architect, currently exploring the world of web development. This website is my personal space to share my journey, skills, and projects. I invite you to browse through and hope you find something that resonates with you!
             </h2>
+            <button class="button">
+                <div class="connect">
+                    <a class="btn-connect" href="#about-me">Let's Connect</a>
+                </div>
+            </button>
         </div>
 
-        <button class="button">
-            <div class="connect">
-                Lets Connect
-            </div>
-            
-        </button>
+
 
     </section>
-    <section class="skills">
+    <section class="skills" id="skills">
         <h2>Skills</h2>
-        <hr >
+        <hr>
         <ul>
-            <li>Profecient in Japanese Language </li>
-            <li>Interpretaion and Translation  in Japanese</li>
-            <li>AWS Solution Architect</li>
+            <li>Profecient in Japanese Language : JLPT N1 holder </li>
+            <li>Interpretaion and Translation in Japanese</li>
+            <li>AWS Solution Architect : AWS SAA-C03</li>
             <li>Web Development : HTML, CSS and Javascript</li>
             <li>Microsoft Office : Word, Power Point, Excel and Advance Excel</li>
         </ul>
 
     </section>
 
-    <section class="project">
-        <h2>Project</h2>
-        <div class="Project">
-            <div class="Mondrian-Project"> 
+    <section class="projects" id="projects">
+        <h2>Projects</h2>
+        <hr>
+        <div class="container2">
+            <div class="Mondrian-Project container3">
                 <h3>Mondrian-Project</h3>
                 <a href="./assets/mondrian-project/index.html">
-                    <img src="./assets/image/mondrian-img.png" height="500px" alt="mondrian-image">
+                    <img src="./assets/image/mondrian-img.png" alt="mondrian-image">
                 </a>
                 <p>Utilized display:grid to create an image.</p>
             </div>
 
-            <div class="Design-Agency-Website" >
-                <h3>Design Agence Website</h3>
-                <a href="./assets/Web Design Agency Project/index.html" >
-                    <img src="./assets/image/Web Design Agency.png" height="500px" width="500px" alt="web design agency image">
+            <div class="Design-Agency-Website container3">
+                <h3>Design Agency Website</h3>
+                <a href="./assets/Web Design Agency Project/index.html">
+                    <img src="./assets/image/Web Design Agency.png" alt="web design agency image">
                 </a>
-                <p> Basic use of @media queries to create a responsive website for a design agency.</p>
+                <p> Basic use of @media queries to create a responsive website</p>
             </div>
 
-            <div class="Design-Agency-Website" >
+            <div class="Moving-company-website container3">
                 <h3>Moving company website</h3>
-                <a href="./assets/Web Design Agency Project/index.html" >
-                    <img src="./assets/image/moving company website.png" height="500px" width="500px" alt="moving company image">
+                <a href="./assets/Moving company website/index.html">
+                    <img src="./assets/image/moving company website.png" alt="moving company image">
                 </a>
                 <p> Utilized bootstrap to build a responsive website for a moving business.</p>
             </div>
 
-            <div class="Coming soon" >
+            <div class="coming-soon container3">
                 <h3>Coming soon</h3>
-                <div class="blank">
-                    <p> Project #4 is coming soon</p>
-                </div>
+                <div class="blank"> </div>
+                <p> Project #4 is coming soon</p>
             </div>
-
-
         </div>
     </section>
 
+    <section class="about-me" id="about-me">
+        <h2>About me</h2>
+        <hr>
+        <p>Hi, I'm Divyanshu Lohani, originally from Delhi and now living in Japan. I am working as Japanese translator
+            and an AWS Solutions Architect, which allows me to work with both language and technology in unique ways.
+        </p>
+        <p>My journey in language learning led me to clear the JLPT N1, the highest level of proficiency in the
+            language, and I also hold certifications in AWS Cloud Practitioner and Solutions Architect Associate.</p>
+        <p>RI have a passion for technology and have recently ventured into web development—this website is one of the
+            results of that new learning experience. When I'm not working, I enjoy playing cricket, watching anime, and
+            always seeking opportunities to learn something new.</p>
+    </section>
+
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <div class="container4">
+                <a href="https://www.linkedin.com/in/divyanshu-lohani-53ba83204/"><i class='bx bxl-linkedin-square'></i></a> 
+                <a href="https://github.com/Divyanshu-Lohani"><i class='bx bxl-github'></i></a> 
+                <a href="mailto:divyanshukumarlohani@gmail.com"><i class='bx bx-envelope'></i></a>
+                <a href="https://www.instagram.com/divyansh_lohani/"><i class='bx bxl-instagram'></i></a> 
+        </div>
+        <div class="copyright">
+            © Divyanshu Lohani | All Rights Reserved</div>
+    </section>
 
 
 </body>
