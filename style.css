@@ -362,5 +362,10 @@ ul > * {
         font-size: 1.2rem;
     }
 
+    .contact {
+        margin: 15px; /* Reduced margin */
+        padding: 0px; /* Reduced padding */
+    }
+
 }
 
