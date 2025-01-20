@@ -1,282 +1,560 @@
 html {
-    scroll-padding-top: 60px; /* Adjust this value to match your header height */
+    scroll-padding-top: 70px;
+    /* This is to prevent content from being hidden behind the fixed header */
+    scroll-behavior: smooth;
+    /* Enable smooth scrolling */
+    overflow-x: hidden;
 }
 
+
 body {
-    color: white;
-    background-color: #121517fb;
+    color: #FBFBFC;
+    background-color: #1D1C21;
     font-family: "Poppins", sans-serif;
     font-style: italic;
     font-weight: lighter;
+    margin: 0;
+    padding: 0;
 }
 
-/* Default link color */
-a {
-    color: white; /* Set your desired color */
-    text-decoration: none; /* Remove underline if desired */
-    background-color: transparent; /* Ensure no background color */
-}
-
-/* Ensure the color remains the same on hover */
-a:hover {
-    color: #04fffb; /* Change color on hover */
-    background-color: transparent; /* Ensure background is transparent */
-}
-
-/* Ensure the color remains the same when active (clicked) */
-a:active {
-    color: white; /* Same color when clicked */
-}
-
-/* Ensure the color remains the same for visited links */
-
-.title {
-    margin-bottom: 50px;
-}
-
-header {
+.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 7px;
+    padding: 20px;
     font-size: 1.2rem;
-    background-color: #111111f8;
-    position: fixed; /* Make the header stay fixed */
-    top: 0; /* Align it to the top of the page */
-    left: 0; /* Align it to the left of the viewport */
-    right: 0; /* Stretch it to the right side */
-    height: 60px; /* Set the height of the header */
-    z-index: 1000; /* Ensures it stays on top of other content */
+    background-color: #1D1C21fb;
+    width: 100vw;
+    height: 70px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
 }
 
 .logo {
     font-size: 1.5rem;
-    transition: transform 0.3s ease; /* Smooth transition for transform */
+    padding: 10px 10px;
+    transition: transform 0.5s ease-in-out;
+    /* Smooth transition for transform */
 }
 
 .logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
+    color: #13F69B;
 }
 
 span {
-    color: #04fffb;
+    color: #13F69B;
 }
 
 .navbar {
     display: flex;
-    gap: 60px;
-    justify-content: flex-end;
-    padding: 20px;
-    margin: 0;
+    margin-left: auto;
+    gap: 20px;
+    padding-right: 10px;
 }
 
-.navbar a {
-    cursor: pointer; /* Change cursor on hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
-    background-color: transparent; /* Ensure no background color */
+.navbar p {
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    /* So we can add pseudo-elements */
+    padding-bottom: 3px;
+    /* Add space for the border */
 }
 
-.navbar a:hover {
-    transform: scale(1.1); /* Scale the button to 110% on hover */
-    border-bottom: 3px solid #04fffb; 
-    background-color: transparent; /* Ensure background is transparent */
+.navbar p:hover {
+    color: #13F69B;
 }
 
-.container1 {
+.navbar p::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #13F69B;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.7s ease-in-out;
+}
+
+.navbar p:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+.navbar p.active {
+    color: #13F69B;
+}
+
+.navbar p.active::after {
+    transform: scaleX(1);
+    /* Keep the underline visible */
+    transform-origin: bottom left;
+}
+
+
+.home-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 0 15%;
+    font-size: 30px;
+    animation: slideUp 2s ease-in forwards;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* Ensure it occupies full viewport height */
+    transform-origin: center bottom;
+    /* Ensure it starts from the bottom */
+
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.home-left,
+.home-right {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Center the content vertically */
     align-items: center;
-    margin-top: 10%;
-    margin-right: 20%;
-    margin-left: 20%;
-    font-size: 30px;
+    /* Center the content horizontally */
+    flex: 0 0 auto;
+    /* Prevent flex-grow (stretching) */
+    width: auto;
+    /* Shrink to fit the content */
+    max-width: 50%;
+    /* Optional: Restrict max width */
+    height: auto;
+    /* Shrink to fit content */
+    max-height: 80vh;
+    /* Optional: Restrict max height */
 }
 
-.container1 .myphoto {
-    height: 250px;
-    border-radius: 50%; /* Make the photo circular */
-    box-shadow: 0 0 10px #04fffb, 0 0 20px #04fffb, 0 0 30px #04fffb; /* Initial glow */
-    animation: glowPulse 3s infinite ease-in-out; /* Animation for the pulsing glow */
+.home-left {
+    align-items: flex-start;
 }
 
-/* Keyframes for pulsing effect */
-@keyframes glowPulse {
-    0% {
-        box-shadow: 0 0 15px #04fffb, 0 0 20px #04fffb, 0 0 30px #04fffb; /* Weaker glow */
-    }
-    50% {
-        box-shadow: 0 0 25px #04fffb, 0 0 30px #04fffb, 0 0 60px #04fffb; /* Stronger glow */
-    }
-    100% {
-        box-shadow: 0 0 15px #04fffb, 0 0 20px #04fffb, 0 0 30px #04fffb; /* Weaker glow */
-    }
+.myphoto {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #13F69B, 0 0 20px #13F69B, 0 0 30px #13F69B;
+    transition: box-shadow 0.3s ease-in-out;
+    /* Smooth transition for the glow effect */
 }
 
-h1 {
-    padding-top: 20px;
-    margin-bottom: 20px;
+.myphoto:hover {
+    box-shadow: 0 0 25px #13F69B, 0 0 30px #13F69B, 0 0 60px #13F69B;
+    /* Glow effect on hover */
+    transition: box-shadow 0.5s ease-in-out;
+    /* Optional for smooth effect on hover */
 }
 
 .summary {
     margin-top: 10px;
     margin-bottom: 30px;
-    text-align: center;
+    text-align: left;
     font-size: 17px;
 }
 
-button{
+/* Buttons container */
+buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    background-color: transparent;
-    border: 0;
+    gap: 30px;
 }
 
-.connect{
+/* Individual button styling */
+button {
     font-size: 1.2rem;
-    padding: 10px 15px; /* Adjust padding for width and height */
-    background-color: #04fffb; /* Button color */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 50px; /* Large border-radius for capsule shape */
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+    padding: 8px 23px;
+    background-color: transparent;
+    color: #13F69B;
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+    animation: btnSlideUp 0.8s ease-out forwards;
+    /* Shortened animation duration */
+    opacity: 0;
+    /* Initially hidden */
+    border: 1px #13F69B solid;
 }
 
-
-.connect:hover {
+button:hover {
     transition: box-shadow 0.3s ease;
-    box-shadow: 0 0px 25px #04fffb;
+    box-shadow: 0 0px 25px #13F69B;
     transform: scale(1.05);
-    color: white;
-    /* Scale the button to 110% on hover */
+    color: #FBFBFC;
+    background-color: #13F69B;
 }
 
-.btn-connect:hover {
-    color: white;
+.btn.home {
+    animation-delay: 1s;
+    /* Start after parent animation */
 }
 
-.skills {
-    margin : 30px;
-    padding-top: 30px;
+.btn.resume {
+    animation-delay: 1.5s;
+}
+
+.btn.projects {
+    animation-delay: 2s;
+}
+
+.btn.about-me {
+    animation-delay: 2.5s;
+}
+
+/* Keyframes for slide-up effect */
+@keyframes btnSlideUp {
+    from {
+        transform: translateY(50px);
+        /* Start slightly lower */
+        opacity: 0;
+        /* Fully hidden */
+    }
+
+    to {
+        transform: translateY(0);
+        /* Final position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
+.resume-section {
+    margin: 30px;
+    padding-top: 60px;
     padding-left: 30px;
     padding-right: 30px;
     text-align: left;
     font-size: 1.5rem;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    animation: slideUp 2s ease-in-out forwards;
 }
 
-ul > * {
-    padding: 25px;
+
+.resume-container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.skills > h2 {
-     color: #04fffb  
+.resume-title {
+    font-size: 36px;
+    margin-bottom: 80px;
+    color: #13F69B;
+}
+
+.work-experience {
+    display: flex;
+    justify-content: space-between;
+}
+
+.work-experience h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: 180px;
+    padding: 0;
+}
+
+.jobs {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.job {
+    display: flex;
+    gap: 50px;
+    width: 660px;
+}
+
+.job {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.job:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.job:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.job:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.job:nth-child(4) {
+    animation-delay: 2s;
+}
+
+.job-date {
+    font-weight: bold;
+    font-size: 14px;
+    width: 170px;
+    text-align: left;
+}
+
+.job-details {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 10px;
+}
+
+.job-title {
+    font-size: 18px;
+    margin: 0;
+}
+
+.job-description {
+    width: 400px;
+    font-size: 14px;
+    color: #666;
+}
+
+
+.resume-section>h2 {
+    color: #13F69B
+}
+
+.resume-container hr {
+    margin: 100px 0;
+}
+
+.project-section {
+    margin-top: 30px;
+    padding-top: 60px;
+    text-align: left;
+    margin-bottom: 100px;
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.project-title {
+    font-size: 36px;
+    margin-bottom: 80px;
+    color: #13F69B;
 }
 
 .projects {
-    margin : 30px;
-    padding-top: 30px;
-    padding-left: 60px;
-    text-align: left;
-    font-size: 1.5rem;
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 }
 
-.projects > h2 {
-    color: #04fffb    
+.project {
+    display: flex;
+    gap: 100px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
 }
 
 
-.container2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
+.project-info h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.project-info p {
+    width: 400px;
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.project-image {
+    display: flex;
+    justify-content: center;
+}
+
+.project-image img {
+    max-width: 750px;
     height: auto;
-    gap: 1rem;
-    margin: 0px;
-    font-size: 1.2rem;
-    padding: 50px 0px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 
-.container2 img{
-    height: 300px;
-    width: 300px;
-    transition: transform 0.3s ease-in-out;
+
+.project {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 2s ease-in-out forwards;
 }
 
-.container2 img:hover{
-    transform: scale(1.03);
+.project:nth-child(1) {
+    animation-delay: 0.5s;
 }
 
-.container3 {
-    display: grid;
-    grid-template-rows: 70px auto 100px;
-    border: 2px solid  #04fffb;
-    padding: 0px 20px;
-    border-radius: 30px;
+.project:nth-child(2) {
+    animation-delay: 1s;
 }
 
-.projects p {
-    font-size: 1rem;
+.project:nth-child(3) {
+    animation-delay: 1.5s;
 }
 
-.about-me{
-    margin : 30px;
-    margin-bottom: 50px;
-    padding-top: 30px;
-    padding-left: 60px;
+
+.about-me-section {
+    height: 85vh;
+    margin: 30px 30px 0 30px;
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
     text-align: left;
     font-size: 1.5rem;
+    animation: slideUp 2s ease-in-out forwards;
 }
 
-.about-me > h2 {
-    color: #04fffb    
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.contact {
-    margin : 30px;
-    padding-top: 30px;
+.about-me-section h1 {
+    font-size: 36px;
+    margin-bottom: 80px;
+    color: #13F69B;
+}
+
+.about-me-section hr {
+    margin: 10px 0 40px 0;
+}
+
+.about-me-section p {
+    font-size: 20px;
+}
+
+.about-me-info p {
+    margin-bottom: 2.5rem;
+    /* Add spacing */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply staggered animation delays for each p tag */
+.about-me-info p:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.about-me-info p:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.about-me-info p:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+
+
+
+.contact-section {
+    margin: 0 30px 5px 30px;
     padding-left: 60px;
     text-align: center;
-    margin-bottom: 5px;
 }
 
-.contact h2 {
-    color: #04fffb;
+.contact-section h2 {
+    color: #13F69B
 }
 
 .container4 {
     display: flex;
     gap: 10px;
-    justify-content: center ;
+    justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+    cursor: pointer;
+    /* Change cursor on hover */
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
 }
 
 .container4 i {
-    border: 2px solid #04fffb;
+    border: 2px solid #13F69B;
     border-radius: 50%;
     padding: 5px;
     margin: 10px;
-    color: #04fffb;
+    color: #13F69B;
 }
-
 
 
 .container4 i:hover {
     transition: box-shadow 0.3s ease;
-    box-shadow: 0 0px 25px #04fffb;
+    box-shadow: 0 0px 25px #13F69B;
     transform: scale(1.2);
-    color: white;
+    color: #FBFBFC;
     /* Scale the button to 110% on hover */
-    background-color: #04fffb;
+    background-color: #13F69B;
 }
 
 
@@ -289,83 +567,220 @@ ul > * {
 
 /* For tablets (768px and below) */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack logo and navbar */
-        padding-bottom: 40px;
+
+    body {
+        width: 100vw;
     }
-    .navbar {
-        gap: 20px;
+
+    .header {
+        flex-direction: column;
+        height: auto;
+        /* Adjust height to fit content */
+        padding: 0;
+        text-align: center;
     }
 
     .logo {
-        padding-bottom: 7px;
+        padding: 0;
     }
 
-    .container1 {
+    .navbar {
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar p {
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .home-section {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 0;
         margin-top: 30%;
-        margin-right: 5%;
-        margin-left: 5%;
-        padding: 5%;
+        padding: 0;
         font-size: 25px;
+        align-items: center;
+        height: 100%;
+        width: 100vw;
+    }
+
+    .home-right,
+    .home-left {
+        max-width: 100%;
+        justify-content: center;
         align-items: center;
     }
 
-    .skills {
-        margin: 15px; /* Reduced margin */
-        padding: 0px; /* Reduced padding */
+    .home-right img {
+        height: 250px;
+        width: 250px;
     }
 
-    .skills ul li {
-        font-size: 1.2rem;
-    }
-    .projects {
-        margin: 15px; /* Reduced margin */
-        padding: 0px; /* Reduced padding */
-    }
-    .container2 {
-        grid-template-columns: 1fr; /* 2 columns on tablets */
-        gap: 20px; /* Adjusted gap */
-        margin: 15px; /* Reduced margin */
-        padding: 0px; /* Reduced padding */
+    .home-left h1 {
+        padding: 30px 0;
+        margin: 0;
     }
 
-    .projects hr {
-        margin-bottom: 40px;
-    }
-    .container3 {
-        padding: 10px; /* Reduced padding for smaller screens */
-        padding-right: 0px;
-        border-radius: 10px; /* Slightly smaller radius */
-        grid-template-rows: 70px auto 70px;
+    .summary {
+        font-size: 15px;
+        padding: 0 45px;
+        margin-top: 0;
     }
 
-    .container3 p {
-        font-size: 0.95rem; /* Reduced font size for better readability */
-        margin-top: 15pxpx; /* Adjusted margin */
+    buttons {
+        gap: 10px;
     }
 
-    .container2 img {
-        height: 200px; /* Reduced image size for tablets */
-        width: 260px;
+    button {
+        font-size: 0.8rem;
+        padding: 4px 10px;
     }
 
-    .about-me {
-        margin: 15px; /* Reduced margin */
-        padding: 0px; /* Reduced padding */
+
+
+
+    .resume-section {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-top: 25%;
+        padding: 0;
+        font-size: 25px;
+        align-items: center;
+        height: 100%;
+        width: 100vw;
     }
 
-    .about-me hr {
-        margin-bottom: 40px;
+    .resume-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
-    .about-me p {
-        font-size: 1.2rem;
+    .resume-title {
+        margin-bottom: 60px;
     }
 
-    .contact {
-        margin: 15px; /* Reduced margin */
-        padding: 0px; /* Reduced padding */
+    .work-experience {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
     }
 
+
+    .job {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .job-details {
+        margin-bottom: 0;
+    }
+
+    .job-description {
+        width: 300px;
+    }
+
+    .resume-container hr {
+        margin: 50px 0;
+    }
+
+
+
+
+    .project-section {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-top: 25%;
+        padding: 0;
+        font-size: 25px;
+        align-items: center;
+        height: 100%;
+        width: 100vw;
+    }
+
+    .project-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .project-title {
+        margin-bottom: 60px;
+    }
+
+    .project {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+
+    .project-info p {
+        font-size: 18px;
+        width: 300px;
+    }
+
+    .project-image img {
+        max-width: 300px
+    }
+
+    .about-me-section {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-top: 25%;
+        padding: 0;
+        font-size: 25px;
+        align-items: center;
+        height: 100%;
+        width: 100vw;
+    }
+
+    .about-me-section h1 {
+        margin-bottom: 60px;
+    }
+
+    .about-me-section p {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .about-me-info {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+
+
+
+    .contact-section {
+        margin: 70px 0 0 0px;
+        /* Reduced margin */
+        padding: 0px;
+        /* Reduced padding */
+    }
+
+    .contact-section h2 {
+        font-size: 20px;
+    }
+
+    .container4 {
+        font-size: 1rem;
+    }
+
+    .copyright {
+        margin: 10px 0 10px 0;
+    }
 }
-
